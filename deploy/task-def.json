@@ -1,0 +1,106 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:866934333672:task-definition/eb-python-webapp-task:4",
+    "containerDefinitions": [
+        {
+            "name": "python-webapp-container",
+            "image": "866934333672.dkr.ecr.ap-southeast-2.amazonaws.com/eb/python-webapp:latest",
+            "cpu": 1024,
+            "memory": 2048,
+            "memoryReservation": 1024,
+            "portMappings": [
+                {
+                    "name": "python-webapp-container-5000-tcp",
+                    "containerPort": 5000,
+                    "hostPort": 5000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/eb-python-webapp-task",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "ap-southeast-2",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "eb-python-webapp-task",
+    "taskRoleArn": "arn:aws:iam::866934333672:role/EB-ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::866934333672:role/EB-ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 4,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2024-08-22T19:08:48.629Z",
+    "registeredBy": "arn:aws:iam::866934333672:user/Edwin",
+    "tags": [
+        {
+            "key": "owner",
+            "value": "eb"
+        },
+        {
+            "key": "service",
+            "value": "ecs"
+        }
+    ]
+}
